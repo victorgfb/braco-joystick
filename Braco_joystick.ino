@@ -27,7 +27,7 @@ Arm braco;
 /* --- Vari�veis Globais --- */
 const byte	numServos = 6,
 			joysticks[] = { A0, A1, A2, A3, A4, A5 },
-			hand = 6;
+			hand = 5;
      
 int   pinServos[] = { 3, 5, 6, 9, 10, 11 },
       zeros[] = { 10, 20, 20, 20, 20, 20 };
@@ -38,7 +38,7 @@ int   pinServos[] = { 3, 5, 6, 9, 10, 11 },
 void setup()
 {
 	Serial.begin(9600);
-	braco.config(pinServos, numServos, zeros, hand - 1);
+	braco.config(pinServos, numServos, zeros, hand);
   braco.invertServo(1); 
 }
 
