@@ -343,9 +343,10 @@ void Arm::config(int *b, byte numServos,int *v, int hand){
 		if(i == hand){
 			this->s[i]->minAngulo=0;
 			this->s[i]->maxAngulo=90;		
+		}else{
+		    this->s[i]->minAngulo = v[i];
+		    this->s[i]->maxAngulo = 180 - v[i];	
 		}
-		this->s[i]->minAngulo = v[i];
-		this->s[i]->maxAngulo = 180 - v[i];		
 	}
 }
 
