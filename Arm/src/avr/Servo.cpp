@@ -369,6 +369,23 @@ void Arm::Run(byte servoSpeed){
 	}
 }	
 
+void Arm::RunBluetooth(byte servoSpeed){
+        switch(Serial.read()){
+          case 67: this->s[0]->write(this->s[0]->pos + servoSpeed);break;
+          case 66 : this->s[0]->write(this->s[0]->pos - servoSpeed);break;
+          case 69 : this->s[1]->write(this->s[1]->pos + servoSpeed);break;
+          case 65 : this->s[1]->write(this->s[1]->pos - servoSpeed);break;
+          case 89 : this->s[2]->write(this->s[2]->pos + servoSpeed);break;
+          case 90 : this->s[2]->write(this->s[2]->pos - servoSpeed);break;
+          case 79 : this->s[3]->write(this->s[3]->pos + servoSpeed);break;
+          case 80 : this->s[3]->write(this->s[3]->pos - servoSpeed);break;
+          case 82 : this->s[4]->write(this->s[4]->pos + servoSpeed);break;
+          case 83 : this->s[4]->write(this->s[4]->pos - servoSpeed);break;
+          case 84 : this->s[5]->write(this->s[5]->pos + servoSpeed);break;
+          case 85 : this->s[5]->write(this->s[5]->pos - servoSpeed);break;
+        }
+} 
+
 void Arm::invertServo(byte i){
 	this->s[i]->invert = true;
 }
