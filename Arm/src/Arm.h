@@ -136,6 +136,7 @@ class Arm
 		void setPosicao(byte ,int ); // Recebe como parametro o numero do servo e o angulo desejado.
 		int getPosicao(byte i); // Recebe como parametro o servo desejado e retorna a posição deste.
 		void Run(byte); //Metodo responsavel por comandar os servos a partir dos analogico, recebe como parametro o intervalo (veloocidade).
+		void RunBluetooth(byte servoSpeed);
 };
 
 #endif
