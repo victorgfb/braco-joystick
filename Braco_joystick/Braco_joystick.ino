@@ -33,13 +33,11 @@ int   pinServos[] = { 3, 5, 6, 9, 10, 11 },
       zeros[] = { 10, 20, 20, 20, 20, 20 };
       
 
-
-
 void setup()
 {
 	Serial.begin(9600);
 	braco.config(pinServos, numServos, zeros, hand);
-  braco.invertServo(1); 
+  //braco.invertServo(1); 
 }
 
 void loop()
