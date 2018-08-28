@@ -37,15 +37,18 @@ void setup()
 {
 	Serial.begin(9600);
 	braco.config(pinServos, numServos, zeros, hand);
+  //braco.resetPosicao();
   //braco.invertServo(1); 
+    //braco.Run(3);
 }
 
 void loop()
 {
 	braco.Run(3);
-	
+ delay(5000);
+  braco.getThing(); 
 	for (int i = 0; i < numServos; i++)
 		Serial.print(String(braco.getPosicao(i)) + "\t");
 	Serial.println();
-	delay(60);
+	delay(10000);
 }
